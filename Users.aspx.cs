@@ -62,6 +62,22 @@ namespace Taller_Mecanico
 
             btnAlta.Enabled = true;
 
+            GridReparaciones.Visible = false;
+
+
+        }
+
+        protected void linkVerReparaciones_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32((sender as LinkButton).CommandArgument);
+
+            Session["IdVehiculo"] = id;
+
+            GridReparaciones.DataSource = Taller.ListarReparacionXVehiculo(id);
+            GridReparaciones.DataBind();
+
+            GridReparaciones.Visible = true;
+                
         }
 
         private bool FaltanDatos()
@@ -117,6 +133,17 @@ namespace Taller_Mecanico
             this.lblAlertas.Text = "Agenda cancelada";
         }
 
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            DateTime fechaInicio = Convert.ToDateTime(this.txtFechaInicio.Text);
+            DateTime fechaFin = Convert.ToDateTime(this.txtFechaFin.Text);
+            int id = int.Parse(Session["IdVehiculo"].ToString());
+
+            GridReparaciones.DataSource = Taller.ListarReparacionXFechaVehiculo(fechaInicio, fechaFin, id);
+            GridReparaciones.DataBind();
+        }
+
 
     }
 }
+

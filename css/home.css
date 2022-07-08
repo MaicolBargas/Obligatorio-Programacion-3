@@ -1,0 +1,55 @@
+﻿body {
+    background-color: #a4a39f;
+}
+.navbar {
+    text-align:right;
+}
+
+.btnMenu {
+    font-size: 25px;
+    color: #a22020;
+    margin-right: 5%;
+}
+.btnMenu:hover {
+    color: #f70a0a;
+    font-size: 30px;
+}
+.ContainerAgenda {
+    margin-top: -20%;
+    background: rgb(137,133,139);
+    background: radial-gradient(circle, rgba(137,133,139,1) 85%, rgba(19,18,18,1) 100%);
+    border-radius: 80px;
+    text-align: center;
+    height: 500px;
+    width: 600px;
+    color: white;
+    font-size:25px
+}
+.header1{
+    font-size:25px;
+}
+.titulo {
+    font-size: 40px;    
+}
+.ContainerFiltrar {
+    height: 300px;
+    width: 600px;
+    margin-left:50%;
+}
+.filtrar {
+    border-radius: 10px;
+    border: solid white;
+    text-align: center;
+    font-size:20px;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 71%, rgba(137,133,139,0.7511379551820728) 100%);
+}
+.btnFiltrar {
+    background-color: forestgreen;
+    color: white;
+    width: 70px; height:30px;
+    border-radius:20px;
+}
+.btnFiltrar:hover{
+    background-color:lightgreen;
+}

@@ -19,9 +19,12 @@ namespace Taller_Mecanico
                 ListarAgenda();
                 ListarVehiculos();
                 ListarMecanicos();
-                btnAlta.Enabled = true;
+                btnAlta.Enabled = false;
                 btnBaja.Enabled = false;
                 btnModificar.Enabled = false;
+                this.txtId.Enabled = false;
+                this.txtFchEntrada.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                this.txtFchSalida.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
 
@@ -75,7 +78,7 @@ namespace Taller_Mecanico
 
         private bool FaltanDatos()
         {
-            if (this.txtId.Text == "" || this.txtVehiculo.Text == "" || this.txtFchEntrada.Text == "" 
+            if (this.txtVehiculo.Text == "" || this.txtFchEntrada.Text == "" 
                 || this.txtFchSalida.Text == "" || this.txtMecanico.Text == "" || this.txtDscEntrada.Text == "" 
                 || this.txtDscSalida.Text == "" || this.txtKms.Text == "")
             {
@@ -94,8 +97,8 @@ namespace Taller_Mecanico
 
             this.txtId.Text = reparacion.IdReparacion.ToString();
             this.txtVehiculo.Text = reparacion.IdVehiculo.ToString();
-            this.txtFchEntrada.Text = reparacion.FchEntrada.ToString();
-            this.txtFchSalida.Text = reparacion.FchSalida.ToString();
+            this.txtFchEntrada.Text = reparacion.FchEntrada.ToString("yyyy-MM-dd");
+            this.txtFchSalida.Text = reparacion.FchSalida.ToString("yyyy-MM-dd");
             this.txtMecanico.Text = reparacion.IdMecanico.ToString();
             this.txtDscEntrada.Text = reparacion.DscEntrada.ToString();
             this.txtDscSalida.Text = reparacion.DscSalida.ToString();
@@ -117,12 +120,18 @@ namespace Taller_Mecanico
 
             this.txtVehiculo.Enabled = false;
             this.txtDscEntrada.Enabled = false;
+            btnAlta.Enabled = true;
+
         }
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
+        protected void btnAgregarRepuestos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionReparacion_Repuesto.aspx");
 
+        }
         #endregion
 
         #region ABM
@@ -130,7 +139,6 @@ namespace Taller_Mecanico
         {
             if (!FaltanDatos())
             {
-                int id = int.Parse(this.txtId.Text);
                 int idVehiculo = int.Parse(this.txtVehiculo.SelectedValue);
                 DateTime fchEntrada = Convert.ToDateTime(this.txtFchEntrada.Text);
                 DateTime fchSalida = Convert.ToDateTime(this.txtFchSalida.Text);
@@ -139,23 +147,17 @@ namespace Taller_Mecanico
                 string salida = this.txtDscSalida.Text;
                 int kms = int.Parse(this.txtKms.Text);
 
-                if (Taller.BuscarReparacionId(id) == null)
-                {
-                    Reparacion unaReparacion = new Reparacion(id, idVehiculo, fchEntrada, fchSalida, idMecanico, entrada, salida, kms);
+                    Reparacion unaReparacion = new Reparacion(idVehiculo, fchEntrada, fchSalida, idMecanico, entrada, salida, kms);
 
                     if (Taller.AltaReparacion(unaReparacion))
                     {
                         this.lblAlertas.Text = "Reparacion ingresado con éxito";
                         Limpiar();
                         Listar();
-                        ListarAgenda();
                         Taller.BajaAgenda(int.Parse(Session["id"].ToString()));
+                        ListarAgenda();
+                        
                     }
-                }
-                else
-                {
-                    this.lblAlertas.Text = "Esta Reparacion ya ha sido registrado";
-                }
             }
             else { this.lblAlertas.Text = "Debe ingresar todos los datos"; }
         }
@@ -200,6 +202,7 @@ namespace Taller_Mecanico
             }
             else { this.lblAlertas.Text = "Debe ingresar todos los datos"; }
         }
+
         #endregion
 
 

@@ -21,7 +21,10 @@ namespace Controladoras
         {
             return PersRepuesto.MostrarRepuesto();
         }
-
+        public static DataTable RepuestoMasUsado()
+        {
+            return PersRepuesto.RepuestoMasUsado();
+        }
         internal static bool AltaRepuesto(Repuesto pRepuesto)
         {
             return PersRepuesto.AltaRepuesto(pRepuesto);

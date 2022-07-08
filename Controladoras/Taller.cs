@@ -18,7 +18,7 @@ namespace Controladoras
         }
 
 
-        public static Admin BuscarAdminCI( int pCI)
+        public static Admin BuscarAdminCI(int pCI)
         {
             foreach (Admin unAdmin in ContrAdmin.ListaAdmin())
             {
@@ -32,8 +32,28 @@ namespace Controladoras
         {
             return ContrAdmin.AltaAdmin(pAdmin);
         }
+        public static DataTable MostrarAdmin()
+        {
+            return ContrAdmin.MostrarAdmin();
+        }
 
-
+        public static Admin BuscarAdminID(int pID)
+        {
+            foreach (Admin unAdmin in ContrAdmin.ListaAdmin())
+            {
+                if (unAdmin.IdAdmin == pID)
+                    return unAdmin;
+            }
+            return null;
+        }
+        public static bool BajaAdmin(int pCi, int pClave)
+        {
+            return ContrAdmin.BajaAdmin(pCi, pClave);
+        }
+        public static bool ModificarAdmin(Admin pAdmin)
+        {
+            return ContrAdmin.ModificarAdmin(pAdmin);
+        }
         #endregion
 
         #region Usuario
@@ -65,9 +85,9 @@ namespace Controladoras
         }
 
         public static bool AltaUsuario(Usuario pUsuario)
-         {
-             return ContrUsuario.AltaUsuario(pUsuario);
-         }
+        {
+            return ContrUsuario.AltaUsuario(pUsuario);
+        }
 
         public static bool BajaUsuario(int pCi)
         {
@@ -121,6 +141,10 @@ namespace Controladoras
         public static DataTable MostrarRepuesto()
         {
             return ContrRepuesto.MostrarRepuesto();
+        }
+        public static DataTable RepuestoMasUsado()
+        {
+            return ContrRepuesto.RepuestoMasUsado();
         }
         public static Repuesto BuscarRepuestoID(int pID)
         {
@@ -250,6 +274,19 @@ namespace Controladoras
         {
             return ContrReparacion.MostrarReparacion();
         }
+        public static DataTable ListarReparacionXVehiculo(int pIdVehiculo)
+        {
+            return ContrReparacion.ListarReparacionXVehiculo(pIdVehiculo);
+        }
+        public static DataTable ListarReparacionXFecha(DateTime pFechaInicio, DateTime pFechaFin)
+        {
+            return ContrReparacion.ListarReparacionXFecha(pFechaInicio, pFechaFin);
+        }
+
+        public static DataTable ListarReparacionXFechaVehiculo(DateTime pFechaInicio, DateTime pFechaFin, int pIdVehiculo)
+        {
+            return ContrReparacion.ListarReparacionXFechaVehiculo(pFechaInicio, pFechaFin, pIdVehiculo);
+        }
 
         public static Reparacion BuscarReparacionId(int pId)
         {
@@ -312,6 +349,32 @@ namespace Controladoras
         }
 
         #endregion
+
+        #region Reparacion_Repuesto
+        public static List<Reparacion_Repuesto> ListaReparacion_Repuesto()
+        {
+            return ContrReparacion_Repuesto.ListaReparacion_Repuesto();
+        }
+
+        public static DataTable MostrarReparacion_Repuesto()
+        {
+            return ContrReparacion_Repuesto.MostrarReparacion_Repuesto();
+        } 
+
+        public static DataTable ListarReparacionRepuestoxReparacion(int pIdReparacion)
+        {
+            return ContrReparacion_Repuesto.ListarReparacionRepuestoxReparacion(pIdReparacion);
+       
+        }
+        public static bool AltaReparacion_Repuesto(Reparacion_Repuesto pReparacion_Repuesto)
+        {
+            return ContrReparacion_Repuesto.AltaReparacion_Repuesto(pReparacion_Repuesto);
+        }
+
+
+
+        #endregion
+
 
     }
 }

@@ -69,15 +69,6 @@ namespace Taller_Mecanico
         protected global::System.Web.UI.WebControls.TextBox txtModelo;
 
         /// <summary>
-        /// Control lblAlertas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAlertas;
-
-        /// <summary>
         /// Control txtAnio.
         /// </summary>
         /// <remarks>
@@ -148,5 +139,14 @@ namespace Taller_Mecanico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridVehiculos;
+
+        /// <summary>
+        /// Control lblAlertas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAlertas;
     }
 }

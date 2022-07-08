@@ -26,6 +26,15 @@ namespace Dominio
         }
         public Admin() { }
 
+        public Admin(string nombre, int ci, string mail, string password, int claveAdmin)
+        {
+            this.nombre = nombre;
+            this.ci = ci;
+            this.mail = mail;
+            this.password = password;
+            this.claveAdmin = claveAdmin;
+        }
+
         public int IdAdmin { get => idAdmin; set => idAdmin = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public int Ci { get => ci; set => ci = value; }

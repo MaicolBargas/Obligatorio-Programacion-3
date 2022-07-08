@@ -69,13 +69,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admins.aspx" />
+    <Content Include="css\AdminsHome.css" />
+    <Content Include="css\css.css" />
+    <Content Include="css\forms.css" />
+    <Content Include="css\home.css" />
+    <Content Include="GestionAdmins.aspx" />
     <Content Include="GestionMecanicos.aspx" />
     <Content Include="GestionProveedores.aspx" />
     <Content Include="GestionReparaciones.aspx" />
+    <Content Include="GestionReparacion_Repuesto.aspx" />
     <Content Include="GestionRepuestos.aspx" />
     <Content Include="GestionUsuarios.aspx" />
     <Content Include="GestionVehiculos.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MisDatos.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Users.aspx" />
     <Content Include="Web.config" />
@@ -87,6 +94,13 @@
     </Compile>
     <Compile Include="Admins.aspx.designer.cs">
       <DependentUpon>Admins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAdmins.aspx.cs">
+      <DependentUpon>GestionAdmins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionAdmins.aspx.designer.cs">
+      <DependentUpon>GestionAdmins.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionMecanicos.aspx.cs">
       <DependentUpon>GestionMecanicos.aspx</DependentUpon>
@@ -108,6 +122,13 @@
     </Compile>
     <Compile Include="GestionReparaciones.aspx.designer.cs">
       <DependentUpon>GestionReparaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionReparacion_Repuesto.aspx.cs">
+      <DependentUpon>GestionReparacion_Repuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionReparacion_Repuesto.aspx.designer.cs">
+      <DependentUpon>GestionReparacion_Repuesto.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionRepuestos.aspx.cs">
       <DependentUpon>GestionRepuestos.aspx</DependentUpon>
@@ -136,6 +157,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisDatos.aspx.cs">
+      <DependentUpon>MisDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisDatos.aspx.designer.cs">
+      <DependentUpon>MisDatos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">

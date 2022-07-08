@@ -6,52 +6,46 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link rel="stylesheet" href="css/forms.css" />
+
 </head>
 <body style="height: 417px">
     <form id="form1" runat="server">
-        <div style="height: 370px">
-            <asp:LinkButton ID="linkMenu" runat="server" OnClick="linkMenu_Click">Menu</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label1" runat="server" Text="Gestion Repuestos"></asp:Label>
-            <br />
-            <br />
-            Id:&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
-            <br />
-            Descripcion:&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
-            <br />
-            Costo:&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtCosto" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblAlertas" runat="server"></asp:Label>
-            <br />
-            Tipo:&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="txtTipo" runat="server" Height="23px" Width="158px">
-                <asp:ListItem Value="M">Motor</asp:ListItem>
-                <asp:ListItem Value="C">Carrocería</asp:ListItem>
-                <asp:ListItem Value="L">Lubricación</asp:ListItem>
-                <asp:ListItem Value="V">Varios</asp:ListItem>
-            </asp:DropDownList>
-            <br />
-            Proovedor:&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="txtProveedor" runat="server">
-            </asp:DropDownList>
-            <br />
-            <br />
-&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnAlta" runat="server" Text="Alta" OnClick="btnAlta_Click" />
-&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnBaja" runat="server" Text="Baja" OnClick="btnBaja_Click" />
-&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
-&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" />
+        <div class="main">
+           <div class="navbar">
+                <asp:LinkButton ID="linkMenu" runat="server" CssClass="linkMenu" OnClick="linkMenu_Click">Menu</asp:LinkButton>
+                <asp:Label ID="Label1" runat="server" Text="Gestionar Repuestos"></asp:Label>
+           </div>
+            <hr />
+            <div class="formulario">
+                <div class="datos">
+                    <asp:TextBox ID="txtId" cssClass="inputs" placeHolder="ID" runat="server"></asp:TextBox>
+  
+                    <asp:TextBox ID="txtDescripcion" cssClass="inputs" placeHolder="Descripcion"  runat="server"></asp:TextBox>
+       
+                    <asp:TextBox ID="txtCosto" cssClass="inputs" placeHolder="Costo"  runat="server"></asp:TextBox>
 
-
-             <br />
-
-
-             <asp:GridView ID="GridRepuestos" runat="server" AutoGenerateColumns ="false " Width="888px" >
+                    <asp:DropDownList ID="txtTipo" cssClass="inputs" runat="server" placeHolder="Seleccionar tipo de Repuesto" Height="40px" >
+                        <asp:ListItem >Seleccionar tipo de Repuesto</asp:ListItem>
+                        <asp:ListItem Value="M">Motor</asp:ListItem>
+                        <asp:ListItem Value="C">Carrocería</asp:ListItem>
+                        <asp:ListItem Value="L">Lubricación</asp:ListItem>
+                        <asp:ListItem Value="V">Varios</asp:ListItem>
+                     </asp:DropDownList>
+                      
+                     <asp:DropDownList ID="txtProveedor" cssClass="inputs" runat="server" Height="40px">
+                     </asp:DropDownList>
+                </div>
+                <div class="buttons">
+                    <asp:Button ID="btnAlta" runat="server" CssClass="btn" Text="Alta" OnClick="btnAlta_Click" />
+                    <asp:Button ID="btnBaja" runat="server" CssClass="btn" Text="Baja" OnClick="btnBaja_Click" />
+                    <asp:Button ID="btnModificar" runat="server" CssClass="btn" Text="Modificar" OnClick="btnModificar_Click" />
+                    <asp:Button ID="btnLimpiar" runat="server" CssClass="btn" Text="Limpiar" OnClick="btnLimpiar_Click" />
+                </div>
+            </div>
+            <div class="grid">
+               <asp:GridView ID="GridRepuestos" runat="server" AutoGenerateColumns ="False" Width="888px" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" >
+                   <AlternatingRowStyle BackColor="#F7F7F7" />
                 <Columns>
                     <asp:BoundField DataField="IdRepuesto" HeaderText="Id" />
                     <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
@@ -63,13 +57,21 @@
                             <asp:LinkButton ID="LinkView" runat="server" CommandArgument='<%# Eval("IdRepuesto") %>' OnClick="link_OnClick" >Seleccionar</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
-
-
-                </Columns>
-
-            </asp:GridView>
-
-
+                  </Columns>
+                   <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+                   <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+                   <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+                   <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+                   <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+                   <SortedAscendingCellStyle BackColor="#F4F4FD" />
+                   <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
+                   <SortedDescendingCellStyle BackColor="#D8D8F0" />
+                   <SortedDescendingHeaderStyle BackColor="#3E3277" />
+                 </asp:GridView>
+                <div class="ContainerAlerts">
+                    <asp:Label ID="lblAlertas" CssClass="alerts" runat="server"></asp:Label>
+                </div>
+            </div>
         </div>
     </form>
 </body>

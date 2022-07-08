@@ -20,7 +20,18 @@ namespace Controladoras
         {
             return PersReparacion.MostrarReparacion();
         }
-
+        public static DataTable ListarReparacionXVehiculo(int pIdVehiculo)
+        {
+            return PersReparacion.ListarReparacionXVehiculo(pIdVehiculo);
+        }
+        public static DataTable ListarReparacionXFecha(DateTime pFechaInicio, DateTime pFechaFin)
+        {
+            return PersReparacion.ListarReparacionXFecha(pFechaInicio, pFechaFin);
+        }
+        public static DataTable ListarReparacionXFechaVehiculo(DateTime pFechaInicio, DateTime pFechaFin, int pIdVehiculo)
+        {
+            return PersReparacion.ListarReparacionXFechaVehiculo(pFechaInicio, pFechaFin, pIdVehiculo);
+        }
         internal static bool AltaReparacion(Reparacion pReparacion)
         {
             return PersReparacion.AltaReparacion(pReparacion);

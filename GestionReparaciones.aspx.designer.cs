@@ -33,13 +33,13 @@ namespace Taller_Mecanico
         protected global::System.Web.UI.WebControls.LinkButton linkMenu;
 
         /// <summary>
-        /// Control GridAgenda.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridAgenda;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// Control txtId.
@@ -67,15 +67,6 @@ namespace Taller_Mecanico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFchEntrada;
-
-        /// <summary>
-        /// Control lblAlertas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAlertas;
 
         /// <summary>
         /// Control txtFchSalida.
@@ -159,6 +150,15 @@ namespace Taller_Mecanico
         protected global::System.Web.UI.WebControls.Button btnLimpiar;
 
         /// <summary>
+        /// Control GridAgenda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridAgenda;
+
+        /// <summary>
         /// Control GridReparaciones.
         /// </summary>
         /// <remarks>
@@ -166,5 +166,23 @@ namespace Taller_Mecanico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridReparaciones;
+
+        /// <summary>
+        /// Control btnAgregarRepuestos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregarRepuestos;
+
+        /// <summary>
+        /// Control lblAlertas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAlertas;
     }
 }

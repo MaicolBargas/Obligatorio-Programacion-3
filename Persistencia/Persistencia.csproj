@@ -47,6 +47,7 @@
     <Compile Include="PersMecanico.cs" />
     <Compile Include="PersProveedor.cs" />
     <Compile Include="PersReparacion.cs" />
+    <Compile Include="PersReparacion_Repuesto.cs" />
     <Compile Include="PersRepuesto.cs" />
     <Compile Include="PersUsuario.cs" />
     <Compile Include="PersVehiculo.cs" />

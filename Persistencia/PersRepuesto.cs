@@ -60,6 +60,16 @@ namespace Persistencia
             da.Fill(dt);
             return dt;
         }
+        public static DataTable RepuestoMasUsado()
+        {
+            var conexionSQL = new SqlConnection(CadenadaDeConexion);
+            conexionSQL.Open();
+            SqlDataAdapter da = new SqlDataAdapter("RepuestoMasUsado", conexionSQL);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
 
         public static bool AltaRepuesto(Repuesto pRepuesto)
         {
@@ -110,7 +120,7 @@ namespace Persistencia
                 var conexionSQL = new SqlConnection(CadenadaDeConexion);
                 conexionSQL.Open();
 
-                SqlCommand cmd = new SqlCommand("BajaRepuesto", conexionSQL);
+                SqlCommand cmd = new SqlCommand("BajaRespuesto", conexionSQL);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 

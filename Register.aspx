@@ -6,35 +6,29 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+<link rel="stylesheet" href="css/css.css" />
+
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="height: 402px">
+        <div class="container">
+           <div class="form">
+                <div class="login">
+            <p class="tittle">Registrate</p>
+            <asp:TextBox ID="txtNombre" runat="server" CssClass="textboxs"  placeHolder="Nombre"></asp:TextBox>
 
-            Registrate<br />
-            Nombre&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-            <br />
-            C.I.&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtCi" runat="server"></asp:TextBox>
-            <br />
-            Telefono&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
-            <br />
-            E-Mail&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtMail" runat="server"></asp:TextBox>
-            <br />
-            Contraseña&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
-            <br />
-            <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Registrate" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            <br />
+            <asp:TextBox ID="txtCi" runat="server" CssClass="textboxs" placeHolder="C.I"></asp:TextBox>
+
+            <asp:TextBox ID="txtTelefono" runat="server" CssClass="textboxs" placeHolder="Telefono"></asp:TextBox>
+
+            <asp:TextBox ID="txtMail" runat="server" CssClass="textboxs" placeHolder="E-Mail"></asp:TextBox>
+
+            <asp:TextBox ID="txtPassword" runat="server" CssClass="textboxs" placeHolder="Contraseña"></asp:TextBox>
+
+            <asp:Button ID="btnRegister" runat="server" CssClass="button" OnClick="btnRegister_Click" Text="Registrate" />
+                <br />  
             <asp:Label ID="lblAlertas" runat="server"></asp:Label>
-
+            </div>
         </div>
     </form>
 </body>

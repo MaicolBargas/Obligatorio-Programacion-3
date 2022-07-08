@@ -13,7 +13,10 @@ namespace Taller_Mecanico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack) 
+            { 
+             txtCodeAdmin.Visible = false; 
+            }
         }
         private bool FaltanDatos()
         {
@@ -85,6 +88,11 @@ namespace Taller_Mecanico
         protected void btnRegister_Click(object sender, EventArgs e)
         {
         Response.Redirect("Register.aspx");
+        }
+
+        protected void linkAdmin_Click(object sender, EventArgs e)
+        {
+            txtCodeAdmin.Visible = true;
         }
     }
 }

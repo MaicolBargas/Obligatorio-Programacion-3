@@ -46,6 +46,7 @@
     <Compile Include="ContrMecanico.cs" />
     <Compile Include="ContrProveedor.cs" />
     <Compile Include="ContrReparacion.cs" />
+    <Compile Include="ContrReparacion_Repuesto.cs" />
     <Compile Include="ContrRepuesto.cs" />
     <Compile Include="ContrUsuario.cs" />
     <Compile Include="ContrVehiculo.cs" />

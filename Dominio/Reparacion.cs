@@ -17,6 +17,19 @@ namespace Dominio
         private string dscSalida;
         private int kmsEntrada;
 
+        public Reparacion( int idVehiculo, DateTime fchEntrada, DateTime fchSalida, int idMecanico, string dscEntrada, string dscSalida, int kmsEntrada)
+        {
+            this.idVehiculo = idVehiculo;
+            this.fchEntrada = fchEntrada;
+            this.fchSalida = fchSalida;
+            this.idMecanico = idMecanico;
+            this.dscEntrada = dscEntrada;
+            this.dscSalida = dscSalida;
+            this.kmsEntrada = kmsEntrada;
+        }
+        public Reparacion()
+        { }
+
         public Reparacion(int idReparacion, int idVehiculo, DateTime fchEntrada, DateTime fchSalida, int idMecanico, string dscEntrada, string dscSalida, int kmsEntrada)
         {
             this.idReparacion = idReparacion;
@@ -28,8 +41,6 @@ namespace Dominio
             this.dscSalida = dscSalida;
             this.kmsEntrada = kmsEntrada;
         }
-        public Reparacion()
-        { }
 
         public int IdReparacion { get => idReparacion; set => idReparacion = value; }
         public int IdVehiculo { get => idVehiculo; set => idVehiculo = value; }
